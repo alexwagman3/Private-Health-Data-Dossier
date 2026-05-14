@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Real labs (defensive — keep your own data out of git)
+# Comment out if your repo IS your private health dossier.
+data/my_labs/
+
+# Build script artifact (kept locally; not part of the repo)
+/build_notebook.py

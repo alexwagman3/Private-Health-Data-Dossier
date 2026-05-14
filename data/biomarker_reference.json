@@ -1,0 +1,636 @@
+{
+  "_meta": {
+    "version": "0.1.0",
+    "description": "Reference ranges and plain-English explanations for common blood-panel biomarkers.",
+    "sources": [
+      "NIH National Library of Medicine - MedlinePlus Lab Test Information (medlineplus.gov/lab-tests/)",
+      "Mayo Clinic - Test & Procedures (mayoclinic.org)",
+      "American Heart Association - Cholesterol guidelines (heart.org)",
+      "American Diabetes Association - Standards of Care (diabetes.org)",
+      "American Thyroid Association - Thyroid Function Tests (thyroid.org)"
+    ],
+    "disclaimer": "Reference ranges vary by lab, age, sex, and patient context. Values here are typical adult ranges and should NOT be used to diagnose or treat any condition. Always interpret your labs alongside the reference range printed on YOUR report, with a clinician."
+  },
+  "markers": [
+    {
+      "canonical_name": "Total Cholesterol",
+      "also_known_as": ["Cholesterol", "Cholesterol, Total", "TC", "Serum Cholesterol"],
+      "unit": "mg/dL",
+      "optimal_range": [125, 200],
+      "clinical_range": [0, 240],
+      "what_it_measures": "The total amount of cholesterol (LDL + HDL + a fraction of triglycerides) circulating in your blood.",
+      "why_it_matters": "A high number raises cardiovascular risk over time, but the breakdown between LDL and HDL matters more than the total alone.",
+      "category": "lipid_panel"
+    },
+    {
+      "canonical_name": "LDL Cholesterol",
+      "also_known_as": ["LDL", "LDL-C", "Low-Density Lipoprotein", "LDL Cholesterol, Calculated", "LDL Direct"],
+      "unit": "mg/dL",
+      "optimal_range": [0, 100],
+      "clinical_range": [0, 130],
+      "what_it_measures": "Low-density lipoprotein - the cholesterol-carrying particles most associated with plaque buildup in arteries.",
+      "why_it_matters": "Often called 'bad' cholesterol. Sustained elevation is one of the strongest modifiable risk factors for heart attack and stroke.",
+      "category": "lipid_panel"
+    },
+    {
+      "canonical_name": "HDL Cholesterol",
+      "also_known_as": ["HDL", "HDL-C", "High-Density Lipoprotein", "HDL Cholesterol Direct"],
+      "unit": "mg/dL",
+      "optimal_range": [50, 100],
+      "clinical_range": [40, 100],
+      "what_it_measures": "High-density lipoprotein - particles that ferry cholesterol away from arteries back to the liver.",
+      "why_it_matters": "Often called 'good' cholesterol. Higher values are generally protective; very low values raise cardiovascular risk.",
+      "category": "lipid_panel"
+    },
+    {
+      "canonical_name": "Triglycerides",
+      "also_known_as": ["TG", "Trigs", "Triglyceride"],
+      "unit": "mg/dL",
+      "optimal_range": [0, 100],
+      "clinical_range": [0, 150],
+      "what_it_measures": "Fats circulating in the blood, mostly derived from recent meals and from carbohydrate metabolism.",
+      "why_it_matters": "Elevated values associate with insulin resistance and pancreatic stress; very high values can directly cause pancreatitis.",
+      "category": "lipid_panel"
+    },
+    {
+      "canonical_name": "Non-HDL Cholesterol",
+      "also_known_as": ["Non-HDL", "Non-HDL-C"],
+      "unit": "mg/dL",
+      "optimal_range": [0, 130],
+      "clinical_range": [0, 160],
+      "what_it_measures": "Total cholesterol minus HDL - a single number capturing all the atherogenic (artery-clogging) lipoproteins.",
+      "why_it_matters": "Often a better predictor of cardiovascular risk than LDL alone, especially when triglycerides are elevated.",
+      "category": "lipid_panel"
+    },
+    {
+      "canonical_name": "Apolipoprotein B",
+      "also_known_as": ["ApoB", "Apo B"],
+      "unit": "mg/dL",
+      "optimal_range": [0, 90],
+      "clinical_range": [0, 100],
+      "what_it_measures": "A protein on every atherogenic lipoprotein particle - essentially a direct particle count.",
+      "why_it_matters": "Many cardiologists now treat ApoB as the most accurate single measure of lipid-driven cardiovascular risk.",
+      "category": "lipid_panel"
+    },
+    {
+      "canonical_name": "Lipoprotein(a)",
+      "also_known_as": ["Lp(a)", "LPA"],
+      "unit": "nmol/L",
+      "optimal_range": [0, 75],
+      "clinical_range": [0, 125],
+      "what_it_measures": "A genetically determined lipoprotein particle linked to plaque formation and clotting.",
+      "why_it_matters": "Largely unmodifiable by lifestyle. A high value is a strong independent risk factor and worth knowing once in your life.",
+      "category": "lipid_panel"
+    },
+    {
+      "canonical_name": "Glucose",
+      "also_known_as": ["Glucose, Fasting", "Fasting Glucose", "FBG", "Blood Sugar", "Glucose, Serum"],
+      "unit": "mg/dL",
+      "optimal_range": [70, 90],
+      "clinical_range": [70, 100],
+      "what_it_measures": "Sugar concentration in blood at the moment of the draw (fasting if drawn after an overnight fast).",
+      "why_it_matters": "Elevated fasting values are an early warning sign of insulin resistance and prediabetes.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "Hemoglobin A1c",
+      "also_known_as": ["HbA1c", "A1c", "Glycated Hemoglobin", "Glycohemoglobin", "Hemoglobin A1C"],
+      "unit": "%",
+      "optimal_range": [4.0, 5.4],
+      "clinical_range": [0, 5.7],
+      "what_it_measures": "Average blood sugar over the previous ~3 months, measured as the percentage of hemoglobin with sugar attached.",
+      "why_it_matters": "The standard screening test for prediabetes (5.7-6.4%) and diabetes (>=6.5%); a stable summary that one bad meal cannot move.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "Insulin",
+      "also_known_as": ["Fasting Insulin", "Insulin, Fasting"],
+      "unit": "uIU/mL",
+      "optimal_range": [2.0, 6.0],
+      "clinical_range": [2.6, 24.9],
+      "what_it_measures": "The hormone your pancreas releases to move glucose into cells.",
+      "why_it_matters": "Insulin rises before glucose does in early insulin resistance, so it can catch metabolic dysfunction years earlier than A1c alone.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "HOMA-IR",
+      "also_known_as": ["Homeostatic Model Assessment of Insulin Resistance", "HOMA"],
+      "unit": "ratio",
+      "optimal_range": [0.5, 1.4],
+      "clinical_range": [0, 1.9],
+      "what_it_measures": "A calculated estimate of insulin resistance from fasting insulin x fasting glucose / 405.",
+      "why_it_matters": "A simple, sensitive marker of how hard your pancreas is working to keep blood sugar normal.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "Sodium",
+      "also_known_as": ["Na", "Na+", "Sodium, Serum"],
+      "unit": "mmol/L",
+      "optimal_range": [136, 144],
+      "clinical_range": [135, 145],
+      "what_it_measures": "Main electrolyte in the fluid outside cells; tightly regulated by the kidneys.",
+      "why_it_matters": "Big swings usually reflect hydration status or kidney/adrenal issues rather than dietary salt.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "Potassium",
+      "also_known_as": ["K", "K+", "Potassium, Serum"],
+      "unit": "mmol/L",
+      "optimal_range": [4.0, 4.8],
+      "clinical_range": [3.5, 5.2],
+      "what_it_measures": "Main electrolyte inside cells; critical for nerve and muscle (including heart) function.",
+      "why_it_matters": "Both high and low values can cause heart-rhythm problems; often affected by kidney function and certain medications.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "Chloride",
+      "also_known_as": ["Cl", "Cl-", "Chloride, Serum"],
+      "unit": "mmol/L",
+      "optimal_range": [98, 106],
+      "clinical_range": [96, 106],
+      "what_it_measures": "An electrolyte that moves with sodium to maintain fluid balance and acid-base status.",
+      "why_it_matters": "Usually interpreted as part of the electrolyte picture, not in isolation.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "Carbon Dioxide",
+      "also_known_as": ["CO2", "Bicarbonate", "Total CO2", "HCO3"],
+      "unit": "mmol/L",
+      "optimal_range": [23, 29],
+      "clinical_range": [22, 29],
+      "what_it_measures": "Total CO2 in blood, mostly bicarbonate - the body's main acid-base buffer.",
+      "why_it_matters": "Abnormal values point to metabolic acid-base disorders or breathing-related problems.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "Blood Urea Nitrogen",
+      "also_known_as": ["BUN", "Urea Nitrogen", "Urea"],
+      "unit": "mg/dL",
+      "optimal_range": [8, 18],
+      "clinical_range": [7, 20],
+      "what_it_measures": "A waste product of protein metabolism cleared by the kidneys.",
+      "why_it_matters": "Rises with dehydration, high-protein diet, or reduced kidney function. Interpret alongside creatinine.",
+      "category": "kidney"
+    },
+    {
+      "canonical_name": "Creatinine",
+      "also_known_as": ["Creat", "Serum Creatinine", "Creatinine, Serum"],
+      "unit": "mg/dL",
+      "optimal_range": [0.7, 1.1],
+      "clinical_range": [0.6, 1.3],
+      "what_it_measures": "A muscle breakdown product cleared by the kidneys; the standard marker of filtration.",
+      "why_it_matters": "Rising creatinine is the most common early signal of declining kidney function.",
+      "category": "kidney"
+    },
+    {
+      "canonical_name": "eGFR",
+      "also_known_as": ["Estimated GFR", "Glomerular Filtration Rate", "eGFR (CKD-EPI)", "GFR Estimated"],
+      "unit": "mL/min/1.73m2",
+      "optimal_range": [90, 120],
+      "clinical_range": [60, 120],
+      "what_it_measures": "An estimate of kidney filtration capacity calculated from creatinine, age, and sex.",
+      "why_it_matters": "Below 60 for 3+ months defines chronic kidney disease; trend matters more than any single value.",
+      "category": "kidney"
+    },
+    {
+      "canonical_name": "BUN/Creatinine Ratio",
+      "also_known_as": ["BUN/Creat Ratio", "Urea/Creatinine Ratio"],
+      "unit": "ratio",
+      "optimal_range": [10, 20],
+      "clinical_range": [9, 23],
+      "what_it_measures": "Ratio of BUN to creatinine; helps separate pre-renal (dehydration) from renal causes of abnormal kidney labs.",
+      "why_it_matters": "An elevated ratio with normal creatinine often just means you were dehydrated at the draw.",
+      "category": "kidney"
+    },
+    {
+      "canonical_name": "Calcium",
+      "also_known_as": ["Ca", "Calcium, Serum", "Total Calcium"],
+      "unit": "mg/dL",
+      "optimal_range": [9.0, 10.2],
+      "clinical_range": [8.6, 10.3],
+      "what_it_measures": "Calcium circulating in blood, tightly regulated by parathyroid hormone and vitamin D.",
+      "why_it_matters": "Persistent elevation can signal parathyroid issues; persistent low values suggest vitamin D deficiency or kidney issues.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "Phosphorus",
+      "also_known_as": ["Phos", "Phosphate", "Inorganic Phosphate"],
+      "unit": "mg/dL",
+      "optimal_range": [3.0, 4.3],
+      "clinical_range": [2.5, 4.5],
+      "what_it_measures": "Phosphate in the blood; works with calcium and vitamin D for bone and energy metabolism.",
+      "why_it_matters": "Abnormal levels often point to kidney, parathyroid, or vitamin D problems.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "Magnesium",
+      "also_known_as": ["Mg", "Magnesium, Serum"],
+      "unit": "mg/dL",
+      "optimal_range": [2.0, 2.4],
+      "clinical_range": [1.7, 2.2],
+      "what_it_measures": "An essential mineral involved in hundreds of enzymatic reactions, including muscle and nerve function.",
+      "why_it_matters": "Low levels are common and often missed; can contribute to fatigue, cramps, and rhythm disturbances.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "Albumin",
+      "also_known_as": ["Albumin, Serum", "Alb"],
+      "unit": "g/dL",
+      "optimal_range": [4.0, 5.0],
+      "clinical_range": [3.5, 5.0],
+      "what_it_measures": "The most abundant protein in blood; made by the liver, carries hormones, drugs, and minerals.",
+      "why_it_matters": "Low values can indicate poor nutrition, liver disease, or chronic inflammation.",
+      "category": "liver"
+    },
+    {
+      "canonical_name": "Total Protein",
+      "also_known_as": ["Protein, Total", "TP"],
+      "unit": "g/dL",
+      "optimal_range": [6.4, 8.0],
+      "clinical_range": [6.0, 8.3],
+      "what_it_measures": "Albumin plus all the globulins (antibodies and other proteins) in serum.",
+      "why_it_matters": "Abnormal values steer further workup toward liver, kidney, or immune-related conditions.",
+      "category": "liver"
+    },
+    {
+      "canonical_name": "Globulin",
+      "also_known_as": ["Globulin, Total", "Glob"],
+      "unit": "g/dL",
+      "optimal_range": [2.2, 3.5],
+      "clinical_range": [1.9, 3.7],
+      "what_it_measures": "Total protein minus albumin - a rough proxy for immunoglobulin (antibody) levels.",
+      "why_it_matters": "Persistently elevated values can indicate chronic inflammation or certain blood-cell disorders.",
+      "category": "liver"
+    },
+    {
+      "canonical_name": "ALT",
+      "also_known_as": ["Alanine Aminotransferase", "SGPT", "ALT (SGPT)"],
+      "unit": "U/L",
+      "optimal_range": [10, 25],
+      "clinical_range": [7, 35],
+      "what_it_measures": "A liver enzyme released when liver cells are stressed or damaged.",
+      "why_it_matters": "Most specific routine marker of liver injury; elevations are commonly due to fatty liver, alcohol, or medication.",
+      "category": "liver"
+    },
+    {
+      "canonical_name": "AST",
+      "also_known_as": ["Aspartate Aminotransferase", "SGOT", "AST (SGOT)"],
+      "unit": "U/L",
+      "optimal_range": [10, 25],
+      "clinical_range": [10, 40],
+      "what_it_measures": "An enzyme found in liver, heart, and muscle cells.",
+      "why_it_matters": "Less liver-specific than ALT; AST/ALT ratio > 2 can suggest alcoholic liver disease.",
+      "category": "liver"
+    },
+    {
+      "canonical_name": "Alkaline Phosphatase",
+      "also_known_as": ["ALP", "Alk Phos"],
+      "unit": "U/L",
+      "optimal_range": [40, 90],
+      "clinical_range": [40, 129],
+      "what_it_measures": "An enzyme from liver, bone, and intestine.",
+      "why_it_matters": "High values point either to bile-flow problems in the liver or to active bone turnover.",
+      "category": "liver"
+    },
+    {
+      "canonical_name": "Total Bilirubin",
+      "also_known_as": ["Bilirubin, Total", "Tbili"],
+      "unit": "mg/dL",
+      "optimal_range": [0.2, 0.9],
+      "clinical_range": [0.1, 1.2],
+      "what_it_measures": "A breakdown product of red blood cells, processed by the liver.",
+      "why_it_matters": "Elevations can mean liver, bile duct, or red-cell-destruction problems; benign Gilbert's syndrome is also common.",
+      "category": "liver"
+    },
+    {
+      "canonical_name": "GGT",
+      "also_known_as": ["Gamma-Glutamyl Transferase", "Gamma GT"],
+      "unit": "U/L",
+      "optimal_range": [5, 30],
+      "clinical_range": [9, 48],
+      "what_it_measures": "A liver enzyme particularly sensitive to alcohol and bile-flow problems.",
+      "why_it_matters": "Often the first liver enzyme to rise with heavy alcohol use, even before ALT.",
+      "category": "liver"
+    },
+    {
+      "canonical_name": "White Blood Cell Count",
+      "also_known_as": ["WBC", "WBC Count", "Leukocytes", "Leukocyte Count"],
+      "unit": "10^3/uL",
+      "optimal_range": [4.5, 8.5],
+      "clinical_range": [4.0, 11.0],
+      "what_it_measures": "Total count of infection-fighting cells per microliter of blood.",
+      "why_it_matters": "Elevation often signals infection or inflammation; low values can reflect viral illness, medication, or marrow issues.",
+      "category": "cbc"
+    },
+    {
+      "canonical_name": "Red Blood Cell Count",
+      "also_known_as": ["RBC", "RBC Count", "Erythrocyte Count"],
+      "unit": "10^6/uL",
+      "optimal_range": [4.4, 5.5],
+      "clinical_range": [4.2, 5.9],
+      "what_it_measures": "Total count of oxygen-carrying cells per microliter of blood.",
+      "why_it_matters": "Interpreted alongside hemoglobin and hematocrit to characterize anemia or polycythemia.",
+      "category": "cbc"
+    },
+    {
+      "canonical_name": "Hemoglobin",
+      "also_known_as": ["Hgb", "Hb", "Hemoglobin (Hb)"],
+      "unit": "g/dL",
+      "optimal_range": [13.5, 16.5],
+      "clinical_range": [12.0, 17.5],
+      "what_it_measures": "The oxygen-carrying protein inside red blood cells.",
+      "why_it_matters": "The headline number for anemia; low values explain fatigue, shortness of breath, and reduced exercise tolerance.",
+      "category": "cbc"
+    },
+    {
+      "canonical_name": "Hematocrit",
+      "also_known_as": ["Hct", "HCT", "Packed Cell Volume", "PCV"],
+      "unit": "%",
+      "optimal_range": [40, 50],
+      "clinical_range": [36, 52],
+      "what_it_measures": "The percentage of blood volume made up of red blood cells.",
+      "why_it_matters": "Tracks closely with hemoglobin; very high values can reflect dehydration or polycythemia.",
+      "category": "cbc"
+    },
+    {
+      "canonical_name": "MCV",
+      "also_known_as": ["Mean Corpuscular Volume", "Mean Cell Volume"],
+      "unit": "fL",
+      "optimal_range": [85, 95],
+      "clinical_range": [80, 100],
+      "what_it_measures": "Average size of red blood cells.",
+      "why_it_matters": "Helps classify anemia: low MCV often iron deficiency; high MCV often B12/folate deficiency or alcohol use.",
+      "category": "cbc"
+    },
+    {
+      "canonical_name": "MCH",
+      "also_known_as": ["Mean Corpuscular Hemoglobin"],
+      "unit": "pg",
+      "optimal_range": [27, 33],
+      "clinical_range": [27, 33],
+      "what_it_measures": "Average amount of hemoglobin in each red blood cell.",
+      "why_it_matters": "Tracks with MCV; helps subclassify anemia.",
+      "category": "cbc"
+    },
+    {
+      "canonical_name": "MCHC",
+      "also_known_as": ["Mean Corpuscular Hemoglobin Concentration"],
+      "unit": "g/dL",
+      "optimal_range": [33, 36],
+      "clinical_range": [32, 36],
+      "what_it_measures": "Average concentration of hemoglobin within each red blood cell.",
+      "why_it_matters": "Usually moves with MCV/MCH; rarely interpreted in isolation.",
+      "category": "cbc"
+    },
+    {
+      "canonical_name": "RDW",
+      "also_known_as": ["Red Cell Distribution Width", "RDW-CV"],
+      "unit": "%",
+      "optimal_range": [11.5, 13.5],
+      "clinical_range": [11.5, 14.5],
+      "what_it_measures": "Variation in red blood cell size.",
+      "why_it_matters": "Elevation can be an early sign of iron, B12, or folate deficiency, sometimes before other CBC values change.",
+      "category": "cbc"
+    },
+    {
+      "canonical_name": "Platelet Count",
+      "also_known_as": ["Platelets", "PLT", "Thrombocytes"],
+      "unit": "10^3/uL",
+      "optimal_range": [200, 350],
+      "clinical_range": [150, 400],
+      "what_it_measures": "Count of clotting cell fragments per microliter of blood.",
+      "why_it_matters": "Very low values raise bleeding risk; very high values can raise clotting risk or signal inflammation.",
+      "category": "cbc"
+    },
+    {
+      "canonical_name": "Neutrophils",
+      "also_known_as": ["Neutrophil %", "Neut %", "Neutrophil Count"],
+      "unit": "%",
+      "optimal_range": [50, 65],
+      "clinical_range": [40, 70],
+      "what_it_measures": "Percentage of white blood cells that are neutrophils - the first responders to bacterial infection.",
+      "why_it_matters": "Elevated with bacterial infection or stress; depressed with viral illness or certain medications.",
+      "category": "cbc"
+    },
+    {
+      "canonical_name": "Lymphocytes",
+      "also_known_as": ["Lymphocyte %", "Lymph %", "Lymphocyte Count"],
+      "unit": "%",
+      "optimal_range": [25, 40],
+      "clinical_range": [20, 45],
+      "what_it_measures": "Percentage of white blood cells involved in long-term immunity (T cells, B cells, NK cells).",
+      "why_it_matters": "Often elevated in viral illness and lower in stress or steroid use.",
+      "category": "cbc"
+    },
+    {
+      "canonical_name": "TSH",
+      "also_known_as": ["Thyroid Stimulating Hormone", "Thyrotropin"],
+      "unit": "uIU/mL",
+      "optimal_range": [0.5, 2.5],
+      "clinical_range": [0.45, 4.5],
+      "what_it_measures": "The pituitary hormone that tells your thyroid to make more or less thyroid hormone.",
+      "why_it_matters": "The single best screening test for thyroid dysfunction; rises in hypothyroidism, drops in hyperthyroidism.",
+      "category": "thyroid"
+    },
+    {
+      "canonical_name": "Free T4",
+      "also_known_as": ["FT4", "Free Thyroxine", "T4, Free", "Thyroxine, Free"],
+      "unit": "ng/dL",
+      "optimal_range": [1.0, 1.5],
+      "clinical_range": [0.8, 1.8],
+      "what_it_measures": "The unbound, active form of the main thyroid hormone.",
+      "why_it_matters": "Confirms whether the thyroid is actually producing enough hormone, regardless of what TSH suggests.",
+      "category": "thyroid"
+    },
+    {
+      "canonical_name": "Free T3",
+      "also_known_as": ["FT3", "Free Triiodothyronine", "T3, Free"],
+      "unit": "pg/mL",
+      "optimal_range": [3.0, 4.0],
+      "clinical_range": [2.3, 4.2],
+      "what_it_measures": "The most metabolically active thyroid hormone, in its unbound form.",
+      "why_it_matters": "Useful when symptoms suggest thyroid dysfunction but TSH and Free T4 look normal.",
+      "category": "thyroid"
+    },
+    {
+      "canonical_name": "Thyroid Peroxidase Antibodies",
+      "also_known_as": ["TPO Antibodies", "TPOAb", "Anti-TPO", "Thyroid Peroxidase Ab"],
+      "unit": "IU/mL",
+      "optimal_range": [0, 9],
+      "clinical_range": [0, 34],
+      "what_it_measures": "Antibodies your immune system makes against an enzyme in the thyroid gland.",
+      "why_it_matters": "Elevated values are the hallmark of Hashimoto's thyroiditis, the most common cause of hypothyroidism.",
+      "category": "thyroid"
+    },
+    {
+      "canonical_name": "Vitamin D, 25-Hydroxy",
+      "also_known_as": ["Vitamin D", "25(OH)D", "25-OH Vitamin D", "Vitamin D, 25-OH, Total"],
+      "unit": "ng/mL",
+      "optimal_range": [40, 60],
+      "clinical_range": [30, 100],
+      "what_it_measures": "The storage form of vitamin D in the body.",
+      "why_it_matters": "Deficiency is extremely common, especially in winter and in darker-skinned people, and affects bone, mood, and immunity.",
+      "category": "vitamins"
+    },
+    {
+      "canonical_name": "Vitamin B12",
+      "also_known_as": ["B12", "Cobalamin", "Vitamin B-12"],
+      "unit": "pg/mL",
+      "optimal_range": [500, 900],
+      "clinical_range": [232, 1245],
+      "what_it_measures": "A vitamin essential for red blood cell formation and nerve function.",
+      "why_it_matters": "Deficiency causes anemia and irreversible neurologic damage if untreated; common in vegans and older adults.",
+      "category": "vitamins"
+    },
+    {
+      "canonical_name": "Folate",
+      "also_known_as": ["Folic Acid", "Folate, Serum", "Vitamin B9"],
+      "unit": "ng/mL",
+      "optimal_range": [10, 20],
+      "clinical_range": [4.6, 20],
+      "what_it_measures": "A B vitamin essential for DNA synthesis and red blood cell formation.",
+      "why_it_matters": "Deficiency causes a specific type of anemia and matters especially in pregnancy.",
+      "category": "vitamins"
+    },
+    {
+      "canonical_name": "Ferritin",
+      "also_known_as": ["Ferritin, Serum"],
+      "unit": "ng/mL",
+      "optimal_range": [50, 150],
+      "clinical_range": [30, 400],
+      "what_it_measures": "The protein that stores iron; a proxy for total body iron stores.",
+      "why_it_matters": "Low ferritin is the most sensitive marker of iron deficiency, often abnormal before hemoglobin drops. Very high values may signal inflammation or iron overload.",
+      "category": "iron"
+    },
+    {
+      "canonical_name": "Iron",
+      "also_known_as": ["Iron, Serum", "Serum Iron", "Fe"],
+      "unit": "ug/dL",
+      "optimal_range": [70, 150],
+      "clinical_range": [50, 170],
+      "what_it_measures": "Iron currently circulating in blood.",
+      "why_it_matters": "Fluctuates day to day and even hour to hour; interpret with ferritin and TIBC.",
+      "category": "iron"
+    },
+    {
+      "canonical_name": "TIBC",
+      "also_known_as": ["Total Iron Binding Capacity", "Iron Binding Capacity"],
+      "unit": "ug/dL",
+      "optimal_range": [250, 400],
+      "clinical_range": [240, 450],
+      "what_it_measures": "The blood's capacity to bind iron, mostly via the protein transferrin.",
+      "why_it_matters": "Rises in iron deficiency (the body up-regulates carriers to grab more iron); falls in iron overload.",
+      "category": "iron"
+    },
+    {
+      "canonical_name": "Transferrin Saturation",
+      "also_known_as": ["Iron Saturation", "Tsat", "% Saturation", "Iron Sat"],
+      "unit": "%",
+      "optimal_range": [25, 40],
+      "clinical_range": [20, 50],
+      "what_it_measures": "The percentage of iron-binding sites currently filled.",
+      "why_it_matters": "Persistently high values raise concern for hereditary hemochromatosis; persistently low values point to iron deficiency.",
+      "category": "iron"
+    },
+    {
+      "canonical_name": "hs-CRP",
+      "also_known_as": ["High Sensitivity CRP", "C-Reactive Protein, High Sensitivity", "hsCRP", "C-Reactive Protein"],
+      "unit": "mg/L",
+      "optimal_range": [0, 1.0],
+      "clinical_range": [0, 3.0],
+      "what_it_measures": "A liver-produced protein that rises with inflammation anywhere in the body.",
+      "why_it_matters": "Persistently elevated values associate with cardiovascular risk; transient spikes follow infections or injury.",
+      "category": "inflammation"
+    },
+    {
+      "canonical_name": "Homocysteine",
+      "also_known_as": ["Hcy"],
+      "unit": "umol/L",
+      "optimal_range": [4, 9],
+      "clinical_range": [0, 11.4],
+      "what_it_measures": "An amino acid byproduct of methionine metabolism, processed using B vitamins.",
+      "why_it_matters": "Elevation can signal B12/folate deficiency and is associated with increased cardiovascular and cognitive risk.",
+      "category": "inflammation"
+    },
+    {
+      "canonical_name": "Uric Acid",
+      "also_known_as": ["Urate", "Uric Acid, Serum"],
+      "unit": "mg/dL",
+      "optimal_range": [3.5, 6.0],
+      "clinical_range": [3.4, 7.0],
+      "what_it_measures": "A waste product of purine metabolism, cleared by the kidneys.",
+      "why_it_matters": "Elevated values can cause gout and associate with metabolic syndrome and cardiovascular risk.",
+      "category": "metabolic"
+    },
+    {
+      "canonical_name": "Testosterone, Total",
+      "also_known_as": ["Total Testosterone", "Testosterone Total", "T, Total"],
+      "unit": "ng/dL",
+      "optimal_range": [500, 900],
+      "clinical_range": [264, 916],
+      "what_it_measures": "The total amount of testosterone in blood, including both bound and free fractions.",
+      "why_it_matters": "Reference ranges vary widely by lab and age. Symptoms matter as much as the number itself.",
+      "category": "hormones"
+    },
+    {
+      "canonical_name": "Testosterone, Free",
+      "also_known_as": ["Free Testosterone", "Testosterone, Free, Direct"],
+      "unit": "pg/mL",
+      "optimal_range": [9.0, 20.0],
+      "clinical_range": [6.6, 18.1],
+      "what_it_measures": "The biologically active fraction of testosterone, not bound to carrier proteins.",
+      "why_it_matters": "Sometimes a better reflection of androgen sufficiency than total testosterone, especially when SHBG is abnormal.",
+      "category": "hormones"
+    },
+    {
+      "canonical_name": "SHBG",
+      "also_known_as": ["Sex Hormone Binding Globulin", "Sex Hormone-Binding Globulin"],
+      "unit": "nmol/L",
+      "optimal_range": [20, 50],
+      "clinical_range": [10, 80],
+      "what_it_measures": "A protein that binds testosterone and estrogen in the blood, regulating how much is biologically available.",
+      "why_it_matters": "Changes in SHBG can mask or unmask hormone imbalances; rises with thyroid hormone and falls with insulin resistance.",
+      "category": "hormones"
+    },
+    {
+      "canonical_name": "Estradiol",
+      "also_known_as": ["E2", "Estradiol, Serum"],
+      "unit": "pg/mL",
+      "optimal_range": [20, 40],
+      "clinical_range": [10, 50],
+      "what_it_measures": "The principal form of estrogen in the body.",
+      "why_it_matters": "Reference ranges vary dramatically by sex, age, and menstrual cycle phase; interpret only with that context.",
+      "category": "hormones"
+    },
+    {
+      "canonical_name": "DHEA-Sulfate",
+      "also_known_as": ["DHEA-S", "DHEAS", "Dehydroepiandrosterone Sulfate"],
+      "unit": "ug/dL",
+      "optimal_range": [200, 400],
+      "clinical_range": [88.9, 427],
+      "what_it_measures": "An adrenal hormone that serves as a precursor to other sex hormones.",
+      "why_it_matters": "Declines steadily with age; very high or very low values can point to adrenal disorders.",
+      "category": "hormones"
+    },
+    {
+      "canonical_name": "Cortisol, Morning",
+      "also_known_as": ["Cortisol AM", "Cortisol, Serum", "Cortisol"],
+      "unit": "ug/dL",
+      "optimal_range": [10, 18],
+      "clinical_range": [6.2, 19.4],
+      "what_it_measures": "The body's main stress hormone, peaks in the early morning.",
+      "why_it_matters": "Very low or very high values can indicate adrenal dysfunction; timing of the draw matters enormously.",
+      "category": "hormones"
+    },
+    {
+      "canonical_name": "PSA",
+      "also_known_as": ["Prostate Specific Antigen", "PSA, Total"],
+      "unit": "ng/mL",
+      "optimal_range": [0, 2.5],
+      "clinical_range": [0, 4.0],
+      "what_it_measures": "A protein produced by the prostate gland.",
+      "why_it_matters": "Used to screen for prostate cancer in men over 50 (or earlier in higher-risk groups); trend over time often matters more than a single value.",
+      "category": "hormones"
+    }
+  ]
+}

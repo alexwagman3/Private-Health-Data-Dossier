@@ -1,0 +1,13 @@
+# Biomarker Brief — Python dependencies
+# Install with: pip install -r requirements.txt
+#
+# All processing runs locally. The only network call from this list is the
+# pip install itself; once installed, the pipeline talks ONLY to
+# http://localhost:11434 (your local Ollama).
+
+pdfplumber>=0.11
+pypdf>=4.0
+pandas>=2.0
+matplotlib>=3.7
+requests>=2.31
+jupyter>=1.0
